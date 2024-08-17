@@ -19,6 +19,7 @@
           modules = [ 
             ./configuration.nix
             inputs.home-manager.nixosModules.default
+            nixos-hardware.nixosModules.microsoft-surface-common
             nix-flatpak.nixosModules.nix-flatpak
           ];
         };
