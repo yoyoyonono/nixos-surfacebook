@@ -87,7 +87,7 @@
       kdePackages.kate
     #  thunderbird
     ];
-    shell = pkgs.zsh
+    shell = pkgs.zsh;
   };
 
   # Enable automatic login for the user.
