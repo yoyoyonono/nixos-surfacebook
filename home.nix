@@ -75,6 +75,20 @@
     NIXOS_OZONE_WL = "1";
   };
 
+  systemd.user.services.browser = {
+    Unit = {
+      Description = "Browser";
+      PartOf = [ "graphical-session.target" ];
+    };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
+    Service = {
+      ExecStart = "${pkgs.writeShellScript "browser" ''
+        firefox -kiosk http://192.168.50.59:8123/
+      ''}";
+    };
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
